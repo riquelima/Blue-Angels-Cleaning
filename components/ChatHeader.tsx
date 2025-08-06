@@ -1,6 +1,6 @@
 import React from 'react';
 import { type User } from '../types';
-import { SettingsIcon, LogoutIcon, LeadsIcon } from './icons';
+import { SettingsIcon, LogoutIcon, LeadsIcon, WebsiteIcon, HcpIcon, BasecampIcon } from './icons';
 
 interface ChatHeaderProps {
   currentUser: User | null;
@@ -9,8 +9,8 @@ interface ChatHeaderProps {
 }
 
 export const ChatHeader: React.FC<ChatHeaderProps> = ({ currentUser, onToggleSettings, onLogout }) => {
-  const handleLeadsClick = () => {
-    window.open('https://docs.google.com/spreadsheets/d/1Kg91cQ4fD6zICE0aOhNIfBY4VluL0ehhQg7Yoc59c54/edit?gid=0#gid=0', '_blank', 'noopener,noreferrer');
+  const handleLinkClick = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -29,14 +29,38 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({ currentUser, onToggleSet
           </div>
         </div>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center flex-wrap justify-end gap-2">
         <button 
-          onClick={handleLeadsClick}
+          onClick={() => handleLinkClick('https://docs.google.com/spreadsheets/d/1Kg91cQ4fD6zICE0aOhNIfBY4VluL0ehhQg7Yoc59c54/edit?gid=0#gid=0')}
           className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500"
           aria-label="Abrir planilha de leads"
         >
           <LeadsIcon className="w-5 h-5" />
           <span>Leads</span>
+        </button>
+        <button 
+          onClick={() => handleLinkClick('https://blueangelscleaning.com/')}
+          className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500"
+          aria-label="Abrir site"
+        >
+          <WebsiteIcon className="w-5 h-5" />
+          <span>Site</span>
+        </button>
+        <button 
+          onClick={() => handleLinkClick('https://pro.housecallpro.com/app/log_in')}
+          className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500"
+          aria-label="Abrir Housecall Pro"
+        >
+          <HcpIcon className="w-5 h-5" />
+          <span>HCP</span>
+        </button>
+        <button 
+          onClick={() => handleLinkClick('https://launchpad.37signals.com/signin')}
+          className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500"
+          aria-label="Abrir Basecamp"
+        >
+          <BasecampIcon className="w-5 h-5" />
+          <span>Basecamp</span>
         </button>
         {currentUser?.username === 'admin' && (
             <button 
