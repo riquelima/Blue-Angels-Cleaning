@@ -23,7 +23,7 @@ export const SupabaseSetup: React.FC<SupabaseSetupProps> = ({ onSave }) => {
       <div className="w-full max-w-lg">
         <div className="flex justify-center mb-6">
           <img 
-            src="https://raw.githubusercontent.com/riquelima/studio/master/semfundoBlueCleaning.png" 
+            src="https://raw.githubusercontent.com/riquelima/Blue-Angels-Cleaning/main/logoTransparentbe.png" 
             alt="Logo"
             className="w-60 h-auto"
           />

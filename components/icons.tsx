@@ -1,11 +1,11 @@
 import React from 'react';
 
 export const BotAvatarIcon = ({ className }: { className?: string }) => (
-    <div className={`flex flex-shrink-0 items-center justify-center rounded-full bg-sky-100 ${className}`}>
+    <div className={`flex flex-shrink-0 items-center justify-center ${className}`}>
         <img
-            src="https://cdn-icons-png.flaticon.com/512/6007/6007820.png"
+            src="https://raw.githubusercontent.com/riquelima/Blue-Angels-Cleaning/main/logoTransparentbe.png"
             alt="Avatar do Robô"
-            className="h-6 w-6"
+            className="h-full w-full object-contain"
         />
     </div>
 );

@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 
 interface LoginScreenProps {
@@ -27,12 +28,12 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin }) => {
       <div className="w-full max-w-sm text-center">
         <div className="flex justify-center mb-6">
             <img 
-              src="https://raw.githubusercontent.com/riquelima/studio/master/semfundoBlueCleaning.png" 
+              src="https://raw.githubusercontent.com/riquelima/Blue-Angels-Cleaning/main/logoTransparentbe.png" 
               alt="Logo"
               className="w-60 h-auto"
             />
         </div>
-        <h1 className="text-2xl font-bold text-slate-800 mb-1">Bem-vindo à Blue Angels Cleaning Services</h1>
+        <h1 className="text-2xl font-bold text-slate-800 mb-1">Bem vindo</h1>
         <p className="text-slate-500 mb-8">Faça login para acessar o assistente.</p>
         
         <form onSubmit={handleSubmit} className="space-y-6 text-left">

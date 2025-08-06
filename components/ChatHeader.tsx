@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { type User } from '../types';
 import { SettingsIcon, LogoutIcon, LeadsIcon } from './icons';
@@ -18,7 +17,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({ currentUser, onToggleSet
     <div className="p-4 border-b border-slate-200 flex-shrink-0 flex items-center justify-between">
       <div className="flex items-center space-x-3">
         <img
-          src="https://raw.githubusercontent.com/riquelima/studio/master/semfundoBlueCleaning.png"
+          src="https://raw.githubusercontent.com/riquelima/Blue-Angels-Cleaning/main/logoTransparentbe.png"
           alt="Logo"
           className="w-24 h-auto"
         />
