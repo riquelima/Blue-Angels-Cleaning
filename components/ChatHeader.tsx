@@ -1,6 +1,6 @@
 import React from 'react';
 import { type User } from '../types';
-import { SettingsIcon, LogoutIcon, LeadsIcon, WebsiteIcon, HcpIcon, BasecampIcon } from './icons';
+import { SettingsIcon, LogoutIcon, LeadsIcon, WebsiteIcon, HcpIcon, BasecampIcon, EmailIcon } from './icons';
 
 interface ChatHeaderProps {
   currentUser: User | null;
@@ -63,13 +63,23 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({ currentUser, onToggleSet
           <span>Basecamp</span>
         </button>
         {currentUser?.username === 'admin' && (
-            <button 
-              onClick={onToggleSettings}
-              className="p-2 rounded-full text-slate-500 hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500"
-              aria-label="Abrir configurações"
-            >
-              <SettingsIcon className="w-6 h-6" />
-            </button>
+            <>
+              <button 
+                onClick={() => handleLinkClick('https://geradortemplatesblueangels.vercel.app/')}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500"
+                aria-label="Abrir Email Templates"
+              >
+                <EmailIcon className="w-5 h-5" />
+                <span>Email Templates</span>
+              </button>
+              <button 
+                onClick={onToggleSettings}
+                className="p-2 rounded-full text-slate-500 hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500"
+                aria-label="Abrir configurações"
+              >
+                <SettingsIcon className="w-6 h-6" />
+              </button>
+            </>
         )}
         <button 
           onClick={onLogout}
