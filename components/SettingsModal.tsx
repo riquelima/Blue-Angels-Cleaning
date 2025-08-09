@@ -109,7 +109,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     <UserAvatarIcon className="w-8 h-8" />
                     <span className="font-medium">{user.username}</span>
                 </div>
-                {user.username !== 'admin' && (
+                {user.username !== 'blue' && (
                   <button 
                     onClick={() => deleteUser(user.username)}
                     className="p-1.5 rounded-full text-slate-400 hover:bg-red-500/20 hover:text-red-400 transition-colors"

@@ -62,24 +62,6 @@ const App: React.FC = () => {
 
   const handleLogin = async (username: string, pass: string): Promise<boolean> => {
     const lowercasedUsername = username.toLowerCase();
-
-    // New admin login
-    if (lowercasedUsername === 'blue' && pass === 'Blue2025') {
-        const { data: adminUser, error } = await supabase
-          .from('users')
-          .select('*')
-          .eq('username', 'admin') // The user in DB is still 'admin'
-          .single();
-
-        if (error || !adminUser) {
-            console.error('Admin login failed: Could not find admin user record in database.', error?.message);
-            return false;
-        }
-
-        setCurrentUser(adminUser);
-        setIsAuthenticated(true);
-        return true;
-    }
     
     // Explicitly block login with 'admin' username to enforce the change.
     if (lowercasedUsername === 'admin') {
@@ -144,7 +126,7 @@ const App: React.FC = () => {
 
 
   const deleteUser = async (username: string) => {
-    if (username === 'admin') return;
+    if (username === 'blue') return; // Prevent deleting the admin account
     
     const { error } = await supabase
       .from('users')
@@ -220,7 +202,7 @@ const App: React.FC = () => {
         />
         <ChatMessages messages={messages} isLoading={isLoading} />
         <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
-        {currentUser?.username === 'admin' && (
+        {currentUser?.username === 'blue' && (
           <SettingsModal
             isOpen={isSettingsOpen}
             onClose={() => setIsSettingsOpen(false)}

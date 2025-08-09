@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { type User } from '../types';
 import { SettingsIcon, LogoutIcon, LeadsIcon, WebsiteIcon, HcpIcon, BasecampIcon, EmailIcon } from './icons';
@@ -62,7 +63,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({ currentUser, onToggleSet
           <BasecampIcon className="w-5 h-5" />
           <span>Basecamp</span>
         </button>
-        {currentUser?.username === 'admin' && (
+        {currentUser?.username === 'blue' && (
             <>
               <button 
                 onClick={() => handleLinkClick('https://geradortemplatesblueangels.vercel.app/')}
